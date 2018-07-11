@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Admin Access */
+/* Template Name: RDR */
 get_header();
 nectar_page_header($post->ID);
 
@@ -28,7 +28,7 @@ extract($fp_options);
 			 if($page_full_screen_rows == 'on') echo '<div id="nectar_fullscreen_rows" data-animation="'.$page_full_screen_rows_animation.'" data-row-bg-animation="'.$page_full_screen_rows_bg_img_animation.'" data-animation-speed="'.$page_full_screen_rows_animation_speed.'" data-content-overflow="'.$page_full_screen_rows_content_overflow.'" data-mobile-disable="'.$page_full_screen_rows_mobile_disable.'" data-dot-navigation="'.$page_full_screen_rows_dot_navigation.'" data-footer="'.$page_full_screen_rows_footer.'" data-anchors="'.$page_full_screen_rows_anchors.'">';
 
 				 if(have_posts()) : while(have_posts()) : the_post();
-				 	if(current_user_can('administrator')){
+				 if(current_user_can('rdr_customer') || current_user_can('rdr_customer_on_account') || current_user_can('rdr_super_customer') || current_user_can('administrator')){
 					 the_content();
 				 } else {
 					 echo 'Sorry, you do not have sufficient access privileges to this page';
