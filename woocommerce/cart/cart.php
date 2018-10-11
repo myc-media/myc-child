@@ -103,7 +103,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
-						if ( ($_product->is_sold_individually() || !$_product->is_sold_individually()) && current_user_can('administrator') && $cart_item['canvas'] == null) {
+						if ( ($_product->is_sold_individually() || !$_product->is_sold_individually()) && $cart_item['canvas'] == null) {
 							
 							$product_quantity = sprintf( '<input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 						} else {
