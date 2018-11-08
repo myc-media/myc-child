@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<td class="product-thumbnail">
 						<?php
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-						$canvasImageSrc = '<img src="'.$cart_item['canvas'].'" />';
+						$canvasImageSrc = '<a href="'.$cart_item['canvas'].'" target="_blank"><img src="'.$cart_item['canvas'].'" /></a>';
 						if ( ! $product_permalink ) {
 							echo $canvasImageSrc;
 						} else {
